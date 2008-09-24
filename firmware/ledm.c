@@ -8,37 +8,47 @@ void ledm_init() {
   LEDM_DDR |= _BV(LEDM_CS) | _BV(3) | _BV(5);
   LEDM_PORT |= _BV(LEDM_CS);
 
-  ledm_dataWrite(0x09, 0x00);
-  ledm_dataWrite(0x0A, 0x01);
-  ledm_dataWrite(0x0B, 0x07);
+  ledm_dataWrite(0,0x09, 0x00);
+  ledm_dataWrite(0,0x0A, 0x01);
+  ledm_dataWrite(0,0x0B, 0x07);
+  ledm_dataWrite(1,0x09, 0x00);
+  ledm_dataWrite(1,0x0A, 0x01);
+  ledm_dataWrite(1,0x0B, 0x07);
   ledm_cls();
-  ledm_dataWrite(0x0C, 0x01);
+  ledm_dataWrite(0,0x0C, 0x01);
+  ledm_dataWrite(1,0x0C, 0x01);
   
 }
 
 void ledm_cls() {
   int i;
   for(i=0;i<8;i++) {
-    ledm_rowWrite(i, 0x00);
+    ledm_rowWrite(0, i, 0x00);
+    ledm_rowWrite(1, i, 0x00);
   }  
 }
 
 void ledm_syncBuffer(char *buffer) {
   int i;
   for(i=0;i<8;i++) {
-    ledm_rowWrite(i, buffer[i]);
+    ledm_rowWrite(0, i, buffer[i]);
   }
 }
 
-void ledm_rowWrite(int row, char data) {
+void ledm_rowWrite(char chip, int row, char data) {
   if (row > 7) return;
-  ledm_dataWrite(row+1, data);
+  ledm_dataWrite(chip, row+1, data);
 }
 
-void ledm_dataWrite(char address, char data) {
+void ledm_dataWrite(char chip, char address, char data) {
+  char i;
   LEDM_PORT &= ~_BV(LEDM_CS);
   ledm_SPIwrite(address);
   ledm_SPIwrite(data);
+  if (chip >0) {
+    ledm_SPIwrite(0);
+    ledm_SPIwrite(0);    
+  }
   LEDM_PORT |= _BV(LEDM_CS);
 }
 

@@ -14,6 +14,9 @@
 #define BUTM_CNT_CLK 6
 #define BUTM_CNT_RST 7
 
+volatile char *encoder_buffer;
+volatile char *button_buffer;
+
 
 void butm_init();
 

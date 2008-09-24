@@ -1,0 +1,13 @@
+This is the start of a firmware, based on an ATMega controller for something of a MIDI controller / Monome / Sequencer cross breed.
+
+Since I am currently developing the hardware in a rather agile fashion (still not sure if this is a good idea, but it kinda works) and I am still in the very very early stages of figuring out basic stuff (such as: how to best read out rotary encoders, how to structure the whole program), there's not much to see here, plus the stuff is changing at a fast rate.
+
+The basic idea is to combine a 8x8 button/LED matrix with a few rotary encoders (read: replace the two bottom rows of buttons with rotary encoders that include a push button) and add some fancy sequencer stuff so that it can work as a standalone sequencer for your synth park.
+
+Schematics for the hardware WILL follow, as soon as the whole thing stabilizes a bit.
+
+Inspired by the Midibox project by Thorsten Klose (http://ucapps.de), by the monome project (http://monome.org)
+
+Also thanks to the tinker.it team for finally getting me started in electronics at the reboot 08 Arduino workshop.
+
+Jan Krutisch in September 2008
