@@ -1,0 +1,7 @@
+
+Tasks with approx. frequency/priority
+
+- Reading input (>=1000 Hz) !!!
+- Refreshing displays (almost irrelevant, 20 ms or something should not be noticable)
+
+- running the sequencer engine (needs a tick frequency, is dependant on BPM)

@@ -1,0 +1,24 @@
+gEDA/gschem Version 1.2.1.20071231
+gEDA/gschem kommt OHNE JEGLICHE GARANTIE. Bitte lies die Datei COPYING fürnähere Informationen.
+Dies ist Freie Software. Sie darf gerne weitergegeben werden. Bitte lies die
+Lizenzbestimmungen in der Datei COPYING für nähere Informationen.
+
+Read system-gafrc file [/sw/etc/gEDA/system-gafrc]
+Did not find optional ~/.gEDA/gafrc file [/Users/jankrutisch/.gEDA/gafrc]
+Did not find optional local gafrc file [/Users/jankrutisch/avr/half.seq/docs/gafrc]
+Read system-gschemrc file [/sw/etc/gEDA/system-gschemrc]
+Did not find optional ~/.gEDA/gschemrc file [/Users/jankrutisch/.gEDA/gschemrc]
+Did not find optional local gschemrc file [/Users/jankrutisch/avr/half.seq/docs/gschemrc]
+Lese init scm Datei [/sw/share/gEDA/scheme/gschem.scm]
+Did not find specified /Users/jankrutisch/avr/half.seq/docs/gafrc file [/Users/jankrutisch/avr/half.seq/docs/gafrc]
+f_open: Unable to get stat information of file /Users/jankrutisch/avr/half.seq/docs/untitled_1.sch.Opened file [/Users/jankrutisch/avr/half.seq/docs/untitled_1.sch]
+Did not find specified /Users/jankrutisch/Documents/Schematics/gafrc file [/Users/jankrutisch/Documents/Schematics/gafrc]
+Opened file [/Users/jankrutisch/Documents/Schematics/matrix_DIN]
+Did not find specified /Users/jankrutisch/Documents/Schematics/gafrc file [/Users/jankrutisch/Documents/Schematics/gafrc]
+Opened file [/Users/jankrutisch/Documents/Schematics/matrix_DIN]
+Gespeichert unter [/Users/jankrutisch/avr/half.seq/docs/matrix_DIN.scv]
+Gespeichert unter [/Users/jankrutisch/avr/half.seq/docs/matrix_DIN.sch]
+Gummifäden AUS
+Dokumentation von [http://www-s.ti.com/sc/ds/sn74hc165.pdf,74165,,74165-1.sym]
+Gummifäden EIN
+Gespeichert [/Users/jankrutisch/avr/half.seq/docs/matrix_DIN.sch]

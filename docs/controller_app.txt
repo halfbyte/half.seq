@@ -1,0 +1,13 @@
+The first application should be a controller-only variant, as this will be the easiest to set up and will already contain vital parts.
+
+first version could be compatible with monome protocol (neglecting the encoders for a start). This would allow me to use all the available monome applications. 
+
+also, it could simply follow the protocol of the monomeserial application over midi (would probably give better performance)
+
+this would allow me to prototype the sequencer application in ruby or a similar language and would give a good feedback on how many additional  controls will be necessary for the final half/seq application.
+
+needed building blocks:
+
+- serial/MIDI i/o
+- LED driver
+- button/encoder driver with debouncing
