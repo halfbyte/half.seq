@@ -43,7 +43,7 @@ int main (void)
     if (i % 100 == 0) {
       //butm_read();
       lcd_setCursor(0,0);
-      lcd_print(itoa(i, buffer, 10));
+      lcd_print(itoa(TCCR0B, buffer, 10));
       lcd_setCursor(0,1);
       lcd_print("                                ");
       //butm_read();

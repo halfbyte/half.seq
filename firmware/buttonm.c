@@ -14,10 +14,10 @@ void butm_init() {
 
   DDRC |= _BV(0);
   
-  TCCR0A = 0;
-  TCCR0B |= (1<<FOC0A)|(1<<CS00) | (1<<CS02);
-  OCR0A = 4;
-  TIMSK0 |= (1<<OCIE0A);
+  TCCR0A = _BV(WGM01);
+  TCCR0B = _BV(CS02) | _BV(CS00);
+  OCR0A = 16;
+  TIMSK0 = (1<<OCIE0A);
   
   for(i=0;i<NUM_ENCODER_ROWS * NUM_ENCODER_COLS;i++)
     encoder_backup[i] = 0x01;
@@ -79,20 +79,20 @@ void butm_read() {
   
   // encoder processing
   for(i=0;i<NUM_ENCODER_ROWS;i++) {
-    for(j=0;j<NUM_ENCODER_COLS;j++)  {
-      char s = 0;
-      if (encoders[i] & _BV(j*2))
-        s=1;
-      if (encoders[i] & _BV(j*2+1))
-        s^=3;
-      
-      s -= encoder_backup[i*NUM_ENCODER_COLS+j];
-      if (s & 1) {
-        encoder_backup[i*NUM_ENCODER_COLS+j] += s;
-        encoder_buffer[i*NUM_ENCODER_COLS+j] += (s & 2) - 1;
+        for(j=0;j<NUM_ENCODER_COLS;j++)  {
+          char s = 0;
+          if (encoders[i] & _BV(j*2))
+            s=1;
+          if (encoders[i] & _BV(j*2+1))
+            s^=3;
+          
+          s -= encoder_backup[i*NUM_ENCODER_COLS+j];
+          if (s & 1) {
+            encoder_backup[i*NUM_ENCODER_COLS+j] += s;
+            encoder_buffer[i*NUM_ENCODER_COLS+j] += (s & 2) - 1;
+          }
+        }
       }
-    }
-  }
 
   
   
